@@ -60,13 +60,15 @@ var compositeOpponent = require('glicko2-composite-opponent');
 
 ### `compositeOpponent(a, b, score, [vol])`
 
-Given _Arrays_ `a` and `b`, each containing glicko2 Players, returns an _Array_
-of matches wherein each player on each team is put against a composite opponent
-made up of the average rating and rating deviation of the opposite team. Each
-match will have a score of _Number_ `score`.
+Given _Arrays_ `a` and `b`, each containing [`glicko2`][2] Players, returns an
+_Array_ of matches wherein each player on each team is put against a composite
+opponent made up of the average rating and rating deviation of the opposite
+team. Each match will have a score of _Number_ `score`.
 
 If you use a custom `vol` parameter you can pass it as a fourth argument. This
 is only used for creating the composite player.
+
+   [2]: https://github.com/mmai/glicko2js
 
 
    [travis]: https://travis-ci.org/KenanY/glicko2-composite-opponent
