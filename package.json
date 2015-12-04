@@ -1,0 +1,37 @@
+{
+  "name": "glicko2-composite-opponent",
+  "version": "0.0.0",
+  "description": "Abstract Glicko-2 to team games through a composite player",
+  "keywords": [
+    "glicko2",
+    "rating",
+    "sports",
+    "statistics",
+    "math"
+  ],
+  "repository": "KenanY/glicko2-composite-opponent",
+  "license": "MIT",
+  "author": "Kenan Yildirim <kenan@kenany.me> (http://kenany.me/)",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "LICENSE.txt"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tape test/index.js"
+  },
+  "dependencies": {
+    "cumulative-moving-average": "^1.0.0",
+    "glicko2": "^0.8.4",
+    "lodash.foreach": "^3.0.3",
+    "lodash.isundefined": "^3.0.1"
+  },
+  "devDependencies": {
+    "lodash.isarray": "^3.0.4",
+    "lodash.isfunction": "^3.0.6",
+    "tape": "^4.2.1"
+  }
+}
