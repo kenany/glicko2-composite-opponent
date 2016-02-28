@@ -43,3 +43,32 @@ test('default vol test', function(t) {
     t.equal(m[1].getRd(), b[i].getRd());
   });
 });
+
+function makePlayer(rating, rd) {
+  return {rating: rating, rd: rd};
+}
+
+test('lite', function(t) {
+  t.plan(4);
+
+  var a = [
+    makePlayer(1069, 227),
+    makePlayer(2415, 217),
+    makePlayer(1817, 258),
+    makePlayer(2412, 239),
+    makePlayer(2446, 66)
+  ];
+  var b = [
+    makePlayer(1036, 85),
+    makePlayer(1338, 64),
+    makePlayer(1138, 64),
+    makePlayer(1079, 159),
+    makePlayer(1942, 164)
+  ];
+
+  var opp = compositeOpponent.lite(a, b);
+  t.ok(isArray(opp));
+  t.equal(opp.length, 2);
+  t.equal(opp[0].rating, 2031.8);
+  t.equal(opp[1].rating, 1306.6);
+});

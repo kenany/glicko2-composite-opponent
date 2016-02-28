@@ -70,6 +70,15 @@ is only used for creating the composite player.
 
    [2]: https://github.com/mmai/glicko2js
 
+### `compositeOpponent.lite(a, b)`
+
+Specifically for use with [`glicko2-lite`][3].
+
+Given _Arrays_ `a` and `b`, each containing _Objects_ with `rating` and `rd`
+properties, returns the composite opponents as an _Array_. First element will be the composite player created from `a` and second element will be the composite
+player created from `b`.
+
+   [3]: https://github.com/KenanY/glicko2-lite
 
    [travis]: https://travis-ci.org/KenanY/glicko2-composite-opponent
    [travis-svg]: https://img.shields.io/travis/KenanY/glicko2-composite-opponent.svg

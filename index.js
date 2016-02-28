@@ -45,4 +45,33 @@ function compositeOpponent(a, b, win, vol) {
   return matches;
 }
 
+function compositeOpponentLite(a, b) {
+  var means = {
+    a: {
+      rating: cma(),
+      rd: cma()
+    },
+    b: {
+      rating: cma(),
+      rd: cma()
+    }
+  };
+
+  forEach(a, function(player) {
+    means.a.rating.push(player.rating);
+    means.a.rd.push(player.rd);
+  });
+
+  forEach(b, function(player) {
+    means.b.rating.push(player.rating);
+    means.b.rd.push(player.rd);
+  });
+
+  var ac = {rating: means.a.rating.value, rd: means.a.rd.value};
+  var bc = {rating: means.b.rating.value, td: means.b.rd.value};
+
+  return [ac, bc];
+}
+
 module.exports = compositeOpponent;
+module.exports.lite = compositeOpponentLite;
