@@ -49,7 +49,7 @@ function makePlayer(rating, rd) {
 }
 
 test('lite', function(t) {
-  t.plan(4);
+  t.plan(6);
 
   var a = [
     makePlayer(1069, 227),
@@ -71,4 +71,6 @@ test('lite', function(t) {
   t.equal(opp.length, 2);
   t.equal(opp[0].rating, 2031.8);
   t.equal(opp[1].rating, 1306.6);
+  t.equal(opp[0].rd, 201.4);
+  t.equal(opp[1].rd, 107.2);
 });

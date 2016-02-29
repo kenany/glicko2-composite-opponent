@@ -68,7 +68,7 @@ function compositeOpponentLite(a, b) {
   });
 
   var ac = {rating: means.a.rating.value, rd: means.a.rd.value};
-  var bc = {rating: means.b.rating.value, td: means.b.rd.value};
+  var bc = {rating: means.b.rating.value, rd: means.b.rd.value};
 
   return [ac, bc];
 }
