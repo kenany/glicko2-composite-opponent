@@ -21,7 +21,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "tape test/index.js"
+    "pretest": "npm run -s lint",
+    "test": "tape test/index.js",
+    "lint": "eslint index.js test/index.js"
   },
   "dependencies": {
     "cumulative-moving-average": "^1.0.0",
@@ -30,6 +32,8 @@
     "lodash.isundefined": "^3.0.1"
   },
   "devDependencies": {
+    "@kenan/eslint-config": "^1.0.1",
+    "eslint": "^2.11.0",
     "lodash.isarray": "^4.0.0",
     "lodash.isfunction": "^3.0.6",
     "tape": "^4.2.1"
