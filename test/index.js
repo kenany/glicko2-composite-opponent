@@ -1,9 +1,11 @@
+'use strict';
+
 var compositeOpponent = require('../');
 var test = require('tape');
 var isArray = require('lodash.isarray');
 var isFunction = require('lodash.isfunction');
 var forEach = require('lodash.foreach');
-var glicko2 = require('glicko2').Glicko2;
+var Glicko2 = require('glicko2').Glicko2;
 
 test('exports a function', function(t) {
   t.plan(1);
@@ -13,7 +15,7 @@ test('exports a function', function(t) {
 test('default vol test', function(t) {
   t.plan(22);
 
-  var r = new glicko2();
+  var r = new Glicko2();
   var a = [
     r.makePlayer(1069, 227),
     r.makePlayer(2415, 217),

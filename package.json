@@ -23,7 +23,8 @@
   "scripts": {
     "pretest": "npm run -s lint",
     "test": "tape test/index.js",
-    "lint": "eslint index.js test/index.js"
+    "lint": "eslint *.js test/*.js",
+    "size": "browserify -g uglifyify index.js | uglifyjs -cm | gzip -9 | wc -c | pretty-bytes"
   },
   "dependencies": {
     "cumulative-moving-average": "^1.0.0",
@@ -33,9 +34,13 @@
   },
   "devDependencies": {
     "@kenan/eslint-config": "^2.0.0",
+    "browserify": "^13.1.0",
     "eslint": "^3.0.1",
     "lodash.isarray": "^4.0.0",
     "lodash.isfunction": "^3.0.6",
-    "tape": "^4.2.1"
+    "pretty-bytes-cli": "^2.0.0",
+    "tape": "^4.2.1",
+    "uglify-js": "^2.7.3",
+    "uglifyify": "^3.0.3"
   }
 }

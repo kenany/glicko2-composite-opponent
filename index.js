@@ -1,3 +1,5 @@
+'use strict';
+
 var cma = require('cumulative-moving-average');
 var glicko = require('glicko2').Glicko2;
 var forEach = require('lodash.foreach');
