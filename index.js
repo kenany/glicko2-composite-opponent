@@ -1,7 +1,7 @@
 'use strict';
 
 var cma = require('cumulative-moving-average');
-var glicko = require('glicko2').Glicko2;
+var Glicko2 = require('glicko2').Glicko2;
 var forEach = require('lodash.foreach');
 var isUndefined = require('lodash.isundefined');
 
@@ -31,7 +31,7 @@ function compositeOpponent(a, b, win, vol) {
     means.b.rd.push(player.getRd());
   });
 
-  var glck = new glicko({vol: vol});
+  var glck = new Glicko2({vol: vol});
   var ac = glck.makePlayer(means.a.rating.value, means.a.rd.value);
   var bc = glck.makePlayer(means.b.rating.value, means.b.rd.value);
 
