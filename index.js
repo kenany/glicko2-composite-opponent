@@ -31,7 +31,7 @@ function compositeOpponent(a, b, win, vol) {
     means.b.rd.push(player.getRd());
   });
 
-  var glck = new Glicko2({vol: vol});
+  var glck = new Glicko2({ vol: vol });
   var ac = glck.makePlayer(means.a.rating.value, means.a.rd.value);
   var bc = glck.makePlayer(means.b.rating.value, means.b.rd.value);
 
@@ -69,8 +69,8 @@ function compositeOpponentLite(a, b) {
     means.b.rd.push(player.rd);
   });
 
-  var ac = {rating: means.a.rating.value, rd: means.a.rd.value};
-  var bc = {rating: means.b.rating.value, rd: means.b.rd.value};
+  var ac = { rating: means.a.rating.value, rd: means.a.rd.value };
+  var bc = { rating: means.b.rating.value, rd: means.b.rd.value };
 
   return [ac, bc];
 }
