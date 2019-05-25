@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@kenan/eslint-config": "^6.0.0",
-    "browserify": "^13.1.0",
+    "browserify": "^16.2.3",
     "eslint": "^5.16.0",
     "lodash.isfunction": "^3.0.6",
     "pretty-bytes-cli": "^2.0.0",
