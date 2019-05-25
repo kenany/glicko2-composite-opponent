@@ -2,7 +2,6 @@
 
 var compositeOpponent = require('../');
 var test = require('tape');
-var isArray = require('lodash.isarray');
 var isFunction = require('lodash.isfunction');
 var forEach = require('lodash.foreach');
 var Glicko2 = require('glicko2').Glicko2;
@@ -32,7 +31,7 @@ test('default vol test', function(t) {
   ];
 
   var matches = compositeOpponent(a, b, 0);
-  t.ok(isArray(matches));
+  t.ok(Array.isArray(matches));
   t.equal(matches.length, 10);
 
   forEach(matches.slice(0, 5), function(m, i) {
@@ -69,7 +68,7 @@ test('lite', function(t) {
   ];
 
   var opp = compositeOpponent.lite(a, b);
-  t.ok(isArray(opp));
+  t.ok(Array.isArray(opp));
   t.equal(opp.length, 2);
   t.equal(opp[0].rating, 2031.8);
   t.equal(opp[1].rating, 1306.6);
