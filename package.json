@@ -33,14 +33,14 @@
     "lodash.isundefined": "^3.0.1"
   },
   "devDependencies": {
-    "@kenan/eslint-config": "^6.0.0",
+    "@kenan/eslint-config": "6.0.0",
     "@kenan/renovate-config": "1.1.1",
-    "browserify": "^16.2.3",
-    "eslint": "^5.16.0",
-    "lodash.isfunction": "^3.0.6",
-    "pretty-bytes-cli": "^2.0.0",
-    "tape": "^4.2.1",
-    "uglify-js": "^3.5.15",
-    "uglifyify": "^5.0.1"
+    "browserify": "16.5.0",
+    "eslint": "5.16.0",
+    "lodash.isfunction": "3.0.9",
+    "pretty-bytes-cli": "2.0.0",
+    "tape": "4.11.0",
+    "uglify-js": "3.6.0",
+    "uglifyify": "5.0.1"
   }
 }
