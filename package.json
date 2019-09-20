@@ -41,6 +41,6 @@
     "pretty-bytes-cli": "2.0.0",
     "tape": "4.11.0",
     "uglify-js": "3.6.0",
-    "uglifyify": "5.0.1"
+    "uglifyify": "5.0.2"
   }
 }
