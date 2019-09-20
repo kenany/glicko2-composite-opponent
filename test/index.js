@@ -1,10 +1,11 @@
 'use strict';
 
-var compositeOpponent = require('../');
 var test = require('tape');
 var isFunction = require('lodash.isfunction');
 var forEach = require('lodash.foreach');
 var Glicko2 = require('glicko2').Glicko2;
+
+var compositeOpponent = require('../');
 
 test('exports a function', function(t) {
   t.plan(1);
