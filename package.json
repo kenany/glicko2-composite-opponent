@@ -27,6 +27,7 @@
     "pretest": "npm run -s lint",
     "test": "tape test/index.js",
     "lint": "eslint *.js test/*.js",
+    "release": "semantic-release",
     "size": "browserify -g uglifyify index.js | uglifyjs -cm | gzip -9 | wc -c | pretty-bytes"
   },
   "dependencies": {
