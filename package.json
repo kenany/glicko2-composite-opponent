@@ -47,7 +47,7 @@
     "lodash.isfunction": "3.0.9",
     "pretty-bytes-cli": "2.0.0",
     "semantic-release": "^17.4.2",
-    "tape": "^5.0.1",
+    "tape": "^5.2.2",
     "uglify-js": "^3.13.2",
     "uglifyify": "5.0.2"
   }
