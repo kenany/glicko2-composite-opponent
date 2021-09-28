@@ -11,7 +11,7 @@
   ],
   "repository": "KenanY/glicko2-composite-opponent",
   "license": "MIT",
-  "author": "Kenan Yildirim <kenan@kenany.me> (http://kenany.me/)",
+  "author": "Kenan Yildirim <kenan@kenany.me> (https://kenany.me/)",
   "main": "index.js",
   "files": [
     "index.js",
@@ -21,7 +21,7 @@
     "test": "test"
   },
   "engines": {
-    "node": "10 || 12 || >=14"
+    "node": "12 || 14 || >=16"
   },
   "scripts": {
     "pretest": "npm run -s lint",

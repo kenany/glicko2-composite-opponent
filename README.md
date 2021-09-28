@@ -1,7 +1,5 @@
 # glicko2-composite-opponent
 
-[![Build Status][travis-svg]][travis]
-
 Update Glicko-2 ratings for two teams of players by creating a composite player
 whose rating and deviation is the average of a team's players and then having
 the opponent team's players each win/lose a single match against the composite
@@ -79,6 +77,3 @@ properties, returns the composite opponents as an _Array_. First element will be
 player created from `b`.
 
    [3]: https://github.com/KenanY/glicko2-lite
-
-   [travis]: https://travis-ci.org/KenanY/glicko2-composite-opponent
-   [travis-svg]: https://img.shields.io/travis/KenanY/glicko2-composite-opponent.svg
