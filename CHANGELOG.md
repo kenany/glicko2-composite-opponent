@@ -1,3 +1,14 @@
+## [3.0.0](https://github.com/KenanY/glicko2-composite-opponent/compare/2.0.2...3.0.0) (2021-09-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* **ci:** Node.js v10 is no longer supported.
+
+### Features
+
+* **ci:** add Node.js v16, remove v10 ([c55ab6c](https://github.com/KenanY/glicko2-composite-opponent/commit/c55ab6c324076cfe7e4dd79f9e5efbd7ffca9a23))
+
 ### [2.0.2](https://github.com/KenanY/glicko2-composite-opponent/compare/2.0.1...2.0.2) (2021-03-31)
 
 
