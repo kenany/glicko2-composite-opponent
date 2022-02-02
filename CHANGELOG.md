@@ -1,3 +1,10 @@
+### [3.0.1](https://github.com/KenanY/glicko2-composite-opponent/compare/3.0.0...3.0.1) (2022-02-02)
+
+
+### Bug Fixes
+
+* **deps:** glicko2@0.8.7 ([b776960](https://github.com/KenanY/glicko2-composite-opponent/commit/b7769604434789cd0c09aec9f6949fa56b6def97))
+
 ## [3.0.0](https://github.com/KenanY/glicko2-composite-opponent/compare/2.0.2...3.0.0) (2021-09-28)
 
 
