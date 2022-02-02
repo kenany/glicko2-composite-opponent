@@ -45,7 +45,7 @@
     "eslint": "^7.32.0",
     "lodash.isfunction": "3.0.9",
     "pretty-bytes-cli": "2.0.0",
-    "semantic-release": "^18.0.1",
+    "semantic-release": "^19.0.2",
     "tape": "^5.5.0",
     "uglify-js": "^3.14.5",
     "uglifyify": "5.0.2"
