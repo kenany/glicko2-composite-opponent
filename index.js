@@ -5,6 +5,13 @@ var Glicko2 = require('glicko2').Glicko2;
 var forEach = require('lodash.foreach');
 var isUndefined = require('lodash.isundefined');
 
+/**
+ * @param {readonly unknown[]} a
+ * @param {readonly unknown[]} b
+ * @param {number} win
+ * @param {number} [vol=0.06]
+ * @returns {[any, any, number][]}
+ */
 function compositeOpponent(a, b, win, vol) {
   if (isUndefined(vol)) {
     vol = 0.06;
@@ -35,6 +42,7 @@ function compositeOpponent(a, b, win, vol) {
   var ac = glck.makePlayer(means.a.rating.value, means.a.rd.value);
   var bc = glck.makePlayer(means.b.rating.value, means.b.rd.value);
 
+  /** @type {[any, any, number][]} */
   var matches = [];
 
   a.forEach(function(player) {
@@ -47,6 +55,17 @@ function compositeOpponent(a, b, win, vol) {
   return matches;
 }
 
+/**
+ * @typedef {object} PlayerLite
+ * @property {number} rating
+ * @property {number} rd
+ */
+
+/**
+ * @param {readonly PlayerLite[]} a
+ * @param {readonly PlayerLite[]} b
+ * @returns {[PlayerLite, PlayerLite]}
+ */
 function compositeOpponentLite(a, b) {
   var means = {
     a: {
