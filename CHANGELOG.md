@@ -1,3 +1,19 @@
+## [4.0.0](https://github.com/KenanY/glicko2-composite-opponent/compare/3.0.1...4.0.0) (2022-11-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node.js v12 is no longer supported.
+
+### Features
+
+* drop Node.js v12 support ([409afc4](https://github.com/KenanY/glicko2-composite-opponent/commit/409afc4c160d4859ac0ec4a400e8c6e8da80ff8f))
+
+
+### Bug Fixes
+
+* **deps:** glicko2@1.0.0 ([2d47b15](https://github.com/KenanY/glicko2-composite-opponent/commit/2d47b151c49428fdbf939f576e4dfdc70ac95f9e))
+
 ### [3.0.1](https://github.com/KenanY/glicko2-composite-opponent/compare/3.0.0...3.0.1) (2022-02-02)
 
 
