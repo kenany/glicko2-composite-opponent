@@ -47,7 +47,7 @@ test('default vol test', function(t) {
 });
 
 function makePlayer(rating, rd) {
-  return { rating: rating, rd: rd };
+  return { rating, rd };
 }
 
 test('lite', function(t) {

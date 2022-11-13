@@ -1,9 +1,9 @@
 'use strict';
 
-var cma = require('cumulative-moving-average');
-var Glicko2 = require('glicko2').Glicko2;
-var forEach = require('lodash.foreach');
-var isUndefined = require('lodash.isundefined');
+const cma = require('cumulative-moving-average');
+const Glicko2 = require('glicko2').Glicko2;
+const forEach = require('lodash.foreach');
+const isUndefined = require('lodash.isundefined');
 
 /**
  * @param {readonly unknown[]} a
@@ -17,7 +17,7 @@ function compositeOpponent(a, b, win, vol) {
     vol = 0.06;
   }
 
-  var means = {
+  const means = {
     a: {
       rating: cma(),
       rd: cma()
@@ -38,12 +38,12 @@ function compositeOpponent(a, b, win, vol) {
     means.b.rd.push(player.getRd());
   });
 
-  var glck = new Glicko2({ vol: vol });
-  var ac = glck.makePlayer(means.a.rating.value, means.a.rd.value);
-  var bc = glck.makePlayer(means.b.rating.value, means.b.rd.value);
+  const glck = new Glicko2({ vol });
+  const ac = glck.makePlayer(means.a.rating.value, means.a.rd.value);
+  const bc = glck.makePlayer(means.b.rating.value, means.b.rd.value);
 
   /** @type {[any, any, number][]} */
-  var matches = [];
+  const matches = [];
 
   a.forEach(function(player) {
     matches.push([player, bc, win]);
@@ -67,7 +67,7 @@ function compositeOpponent(a, b, win, vol) {
  * @returns {[PlayerLite, PlayerLite]}
  */
 function compositeOpponentLite(a, b) {
-  var means = {
+  const means = {
     a: {
       rating: cma(),
       rd: cma()
@@ -88,8 +88,8 @@ function compositeOpponentLite(a, b) {
     means.b.rd.push(player.rd);
   });
 
-  var ac = { rating: means.a.rating.value, rd: means.a.rd.value };
-  var bc = { rating: means.b.rating.value, rd: means.b.rd.value };
+  const ac = { rating: means.a.rating.value, rd: means.a.rd.value };
+  const bc = { rating: means.b.rating.value, rd: means.b.rd.value };
 
   return [ac, bc];
 }
