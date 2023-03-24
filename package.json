@@ -42,7 +42,7 @@
     "@semantic-release/git": "^10.0.1",
     "browserify": "^17.0.0",
     "conventional-changelog-conventionalcommits": "^5.0.0",
-    "eslint": "^8.35.0",
+    "eslint": "^8.36.0",
     "lodash.isfunction": "3.0.9",
     "pretty-bytes-cli": "2.0.0",
     "semantic-release": "^20.1.3",
