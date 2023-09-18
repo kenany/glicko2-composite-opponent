@@ -1,3 +1,14 @@
+## [5.0.0](https://github.com/kenany/glicko2-composite-opponent/compare/4.0.1...5.0.0) (2023-09-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node.js v14 and v16 are no longer supported.
+
+### Features
+
+* drop Node.js v14 and v16 ([86ff532](https://github.com/kenany/glicko2-composite-opponent/commit/86ff5322412ebbe3fdecba89a895a1f42a0dd5f2))
+
 ## [4.0.1](https://github.com/KenanY/glicko2-composite-opponent/compare/4.0.0...4.0.1) (2022-12-26)
 
 
