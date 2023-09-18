@@ -1,0 +1,34 @@
+name: Build
+on: [push, pull_request, merge_group]
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node-version: [18, 20]
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+    steps:
+    - name: Set up Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3.8.1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Update npm
+      run: |
+        npm install -g npm
+        npm --version
+    - name: Checkout code
+      uses: actions/checkout@v4.0.0
+    - name: Install dependencies
+      uses: bahmutov/npm-install@v1.8.35
+      with:
+        useLockFile: false
+    - run: npm ls
+    - name: Test
+      run: npm test
+    - name: Size
+      run: npm run size

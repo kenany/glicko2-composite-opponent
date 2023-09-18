@@ -9,7 +9,7 @@
     "statistics",
     "math"
   ],
-  "repository": "KenanY/glicko2-composite-opponent",
+  "repository": "github:kenany/glicko2-composite-opponent",
   "license": "MIT",
   "author": "Kenan Yildirim <kenan@kenany.me> (https://kenany.me/)",
   "main": "index.js",
@@ -21,7 +21,7 @@
     "test": "test"
   },
   "engines": {
-    "node": "14 || 16 || >=18"
+    "node": "18 || >=20"
   },
   "scripts": {
     "pretest": "npm run -s lint",
@@ -37,14 +37,14 @@
     "lodash.isundefined": "^3.0.1"
   },
   "devDependencies": {
-    "@kenan/eslint-config": "^10.0.2",
+    "@kenan/eslint-config": "^11.0.1",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "browserify": "^17.0.0",
     "conventional-changelog-conventionalcommits": "^6.1.0",
-    "eslint": "^8.47.0",
+    "eslint": "^8.49.0",
     "lodash.isfunction": "3.0.9",
-    "pretty-bytes-cli": "2.0.0",
+    "pretty-bytes-cli": "3.0.0",
     "semantic-release": "^21.0.7",
     "tape": "^5.6.6",
     "uglify-js": "^3.17.4",
