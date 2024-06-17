@@ -1,3 +1,9 @@
+## [5.0.1](https://github.com/kenany/glicko2-composite-opponent/compare/5.0.0...5.0.1) (2024-06-17)
+
+### Bug Fixes
+
+* **deps:** glicko2@1.2.0 ([9cf7660](https://github.com/kenany/glicko2-composite-opponent/commit/9cf7660a4117d1e5e2634655501918f92104677b))
+
 ## [5.0.0](https://github.com/kenany/glicko2-composite-opponent/compare/4.0.1...5.0.0) (2023-09-18)
 
 
