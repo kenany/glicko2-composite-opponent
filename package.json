@@ -1,6 +1,6 @@
 {
   "name": "glicko2-composite-opponent",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "Abstract Glicko-2 to team games through a composite player",
   "keywords": [
     "glicko2",
