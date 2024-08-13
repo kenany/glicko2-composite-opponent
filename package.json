@@ -47,7 +47,7 @@
     "pretty-bytes-cli": "3.0.0",
     "semantic-release": "^24.0.0",
     "tape": "^5.8.1",
-    "uglify-js": "^3.18.0",
+    "uglify-js": "^3.19.2",
     "uglifyify": "5.0.2"
   }
 }
