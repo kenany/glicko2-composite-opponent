@@ -1,6 +1,6 @@
 {
   "name": "glicko2-composite-opponent",
-  "version": "5.0.2",
+  "version": "0.0.0-semantic-release",
   "description": "Abstract Glicko-2 to team games through a composite player",
   "keywords": [
     "glicko2",
@@ -9,45 +9,63 @@
     "statistics",
     "math"
   ],
-  "repository": "github:kenany/glicko2-composite-opponent",
   "license": "MIT",
   "author": "Kenan Yildirim <kenan@kenany.me> (https://kenany.me/)",
-  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenany/glicko2-composite-opponent.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "commonjs",
+  "types": "dist/index.d.cts",
+  "main": "dist/index.cjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./*.mjs": {
+      "default": "./dist/*.mjs"
+    },
+    "./*.cjs": {
+      "default": "./dist/*.cjs"
+    },
+    "./*": {
+      "import": "./dist/*.mjs",
+      "require": "./dist/*.cjs"
+    }
+  },
   "files": [
-    "index.js",
+    "dist",
     "LICENSE.txt"
   ],
-  "directories": {
-    "test": "test"
-  },
   "engines": {
-    "node": "18 || >=20"
+    "node": "22 || 24 || >=26"
   },
   "scripts": {
-    "pretest": "npm run -s lint",
-    "test": "tape test/index.js",
-    "lint": "eslint *.js test/*.js",
-    "release": "semantic-release",
-    "size": "browserify -g uglifyify index.js | uglifyjs -cm | gzip -9 | wc -c | pretty-bytes"
+    "build": "tsdown && tsc --noEmit",
+    "lint": "biome check",
+    "test": "vitest run",
+    "publint": "publint --strict",
+    "prepare": "pnpm build"
   },
   "dependencies": {
     "cumulative-moving-average": "^1.0.0",
-    "glicko2": "^1.2.1",
+    "glicko2": "^1.2.2",
     "lodash.foreach": "^4.5.0",
     "lodash.isundefined": "^3.0.1"
   },
   "devDependencies": {
-    "@kenan/eslint-config": "11.1.18",
-    "@semantic-release/changelog": "7.0.0",
-    "@semantic-release/git": "11.0.1",
-    "browserify": "17.0.1",
+    "@biomejs/biome": "2.5.11",
+    "@containerbase/semantic-release-pnpm": "1.4.3",
+    "@kenan/biome-config": "1.0.6",
     "conventional-changelog-conventionalcommits": "9.3.1",
-    "eslint": "8.57.1",
-    "lodash.isfunction": "3.0.9",
-    "pretty-bytes-cli": "3.0.0",
+    "publint": "0.3.24",
     "semantic-release": "25.0.9",
-    "tape": "5.10.2",
-    "uglify-js": "3.19.3",
-    "uglifyify": "5.0.2"
+    "tsdown": "0.22.14",
+    "typescript": "7.0.2",
+    "vitest": "4.1.11"
   }
 }

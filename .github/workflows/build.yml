@@ -1,34 +1,120 @@
 name: Build
-on: [push, pull_request, merge_group]
+
+on:
+  push:
+    branches:
+      - master
+
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+
+  merge_group:
+
+  workflow_dispatch:
+
 permissions:
   contents: read
-concurrency:
-  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
-  cancel-in-progress: true
+
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Harden runner
+        uses: step-security/harden-runner@05e31511f85b41b11d1cf0ef85d0992719546e2c # v2.21.0
+        with:
+          egress-policy: audit
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup pnpm with runtime
+        uses: pnpm/setup@84cb39b217b10273981911c288cd62326dc7c6d2 # v2.0.2
+        with:
+          cache: true
+          runtime: node@24.20.0
+          version: 11.24.0
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm build
+
+  test:
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
-        node-version: [18, 20]
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        node-version: [22, 24, 26]
     steps:
-    - name: Set up Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Update npm
-      run: |
-        npm install -g npm
-        npm --version
-    - name: Checkout code
-      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-    - name: Install dependencies
-      uses: bahmutov/npm-install@20216767ca67f0f7b4d095dc5859c5700a6581cb # v1.12.1
-      with:
-        useLockFile: false
-    - run: npm ls
-    - name: Test
-      run: npm test
-    - name: Size
-      run: npm run size
+      - name: Harden runner
+        uses: step-security/harden-runner@05e31511f85b41b11d1cf0ef85d0992719546e2c # v2.21.0
+        with:
+          egress-policy: audit
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup pnpm with runtime
+        uses: pnpm/setup@84cb39b217b10273981911c288cd62326dc7c6d2 # v2.0.2
+        with:
+          cache: true
+          runtime: node@${{ matrix.node-version }}
+          version: 11.24.0
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Test
+        run: pnpm test
+
+  lint:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Harden runner
+        uses: step-security/harden-runner@05e31511f85b41b11d1cf0ef85d0992719546e2c # v2.21.0
+        with:
+          egress-policy: audit
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup pnpm with runtime
+        uses: pnpm/setup@84cb39b217b10273981911c288cd62326dc7c6d2 # v2.0.2
+        with:
+          cache: true
+          runtime: node@24.20.0
+          version: 11.24.0
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Lint
+        run: pnpm lint
+
+  publint:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Harden runner
+        uses: step-security/harden-runner@05e31511f85b41b11d1cf0ef85d0992719546e2c # v2.21.0
+        with:
+          egress-policy: audit
+
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup pnpm with runtime
+        uses: pnpm/setup@84cb39b217b10273981911c288cd62326dc7c6d2 # v2.0.2
+        with:
+          cache: true
+          runtime: node@24.20.0
+          version: 11.24.0
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Publint
+        run: pnpm publint

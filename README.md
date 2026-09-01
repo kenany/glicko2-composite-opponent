@@ -12,24 +12,24 @@ This procedure is described in [_Abstracting Glicko-2 for Team Games_][1].
 ## Example
 
 ``` javascript
-var compositeOpponent = require('../');
-var glicko2 = require('glicko2').Glicko2;
+import { compositeOpponent } from 'glicko2-composite-opponent';
+import { Glicko2 } from 'glicko2';
 
-var r = new glicko2();
-var a = [
+const r = new Glicko2();
+const a = [
   r.makePlayer(1100, 300),
   r.makePlayer(1200, 310),
-  r.makePlayer(1300, 320)
+  r.makePlayer(1300, 320),
 ];
-var b = [
+const b = [
   r.makePlayer(1400, 110),
   r.makePlayer(1500, 120),
-  r.makePlayer(1600, 130)
+  r.makePlayer(1600, 130),
 ];
 
 // team A defeats team B
-var matches = compositeOpponent(a, b, 1);
-matches.forEach(function(match) {
+const matches = compositeOpponent(a, b, 1);
+for (const match of matches) {
   console.log('%d±%d vs %d±%d', Math.round(match[0].getRating()),
                                 Math.round(match[0].getRd()),
                                 Math.round(match[1].getRating()),
@@ -40,8 +40,7 @@ matches.forEach(function(match) {
   // => 1200±310 vs 1400±110
   // => 1200±310 vs 1500±120
   // => 1200±310 vs 1600±130
-});
-
+}
 ```
 
 ## Installation
@@ -53,7 +52,7 @@ $ npm install glicko2-composite-opponent
 ## API
 
 ``` javascript
-var compositeOpponent = require('glicko2-composite-opponent');
+import { compositeOpponent, compositeOpponentLite } from 'glicko2-composite-opponent';
 ```
 
 ### `compositeOpponent(a, b, score, [vol])`
@@ -68,12 +67,13 @@ is only used for creating the composite player.
 
    [2]: https://github.com/mmai/glicko2js
 
-### `compositeOpponent.lite(a, b)`
+### `compositeOpponentLite(a, b)`
 
 Specifically for use with [`glicko2-lite`][3].
 
 Given _Arrays_ `a` and `b`, each containing _Objects_ with `rating` and `rd`
-properties, returns the composite opponents as an _Array_. First element will be the composite player created from `a` and second element will be the composite
+properties, returns the composite opponents as an _Array_. First element will be
+the composite player created from `a` and second element will be the composite
 player created from `b`.
 
    [3]: https://github.com/KenanY/glicko2-lite
