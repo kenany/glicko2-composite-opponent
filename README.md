@@ -11,7 +11,7 @@ This procedure is described in [_Abstracting Glicko-2 for Team Games_][1].
 
 ## Example
 
-``` javascript
+```javascript
 import { compositeOpponent } from 'glicko2-composite-opponent';
 import { Glicko2 } from 'glicko2';
 
@@ -30,10 +30,13 @@ const b = [
 // team A defeats team B
 const matches = compositeOpponent(a, b, 1);
 for (const match of matches) {
-  console.log('%d±%d vs %d±%d', Math.round(match[0].getRating()),
-                                Math.round(match[0].getRd()),
-                                Math.round(match[1].getRating()),
-                                Math.round(match[1].getRd()));
+  console.log(
+    '%d±%d vs %d±%d',
+    Math.round(match[0].getRating()),
+    Math.round(match[0].getRd()),
+    Math.round(match[1].getRating()),
+    Math.round(match[1].getRd())
+  );
   // => 1100±300 vs 1500±120
   // => 1200±310 vs 1500±120
   // => 1300±320 vs 1500±120
@@ -45,14 +48,17 @@ for (const match of matches) {
 
 ## Installation
 
-``` bash
+```bash
 $ npm install glicko2-composite-opponent
 ```
 
 ## API
 
-``` javascript
-import { compositeOpponent, compositeOpponentLite } from 'glicko2-composite-opponent';
+```javascript
+import {
+  compositeOpponent,
+  compositeOpponentLite,
+} from 'glicko2-composite-opponent';
 ```
 
 ### `compositeOpponent(a, b, score, [vol])`
