@@ -12,8 +12,8 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       glicko2:
-        specifier: ^1.2.2
-        version: 1.2.2
+        specifier: ^1.2.4
+        version: 1.2.4
       lodash.foreach:
         specifier: ^4.5.0
         version: 4.5.0
@@ -947,8 +947,8 @@ packages:
   git-log-parser@1.2.1:
     resolution: {integrity: sha512-PI+sPDvHXNPl5WNOErAK05s3j0lgwUzMN6o8cyQrDaKfT3qd7TmNJKeXX+SknI5I0QhG5fVPAEwSY4tRGDtYoQ==}
 
-  glicko2@1.2.2:
-    resolution: {integrity: sha512-XtNQRKn8cbaT5zCOUGGTjFEGXLDaSPbO9skq8LO4Dr6KeC5+3IEJdW6apCeKRcEw9eDdp2voujtzrWQTrGnZ/Q==}
+  glicko2@1.2.4:
+    resolution: {integrity: sha512-QvdK2mDLx8jvpJNWmKTVDZhCSDZhE3/yezFTYY00r/BSxBy9TUVgTc8u/w66GITmYmoEK0IHcg/nvSoDuxgM0w==}
 
   graceful-fs@4.2.10:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
@@ -2778,7 +2778,7 @@ snapshots:
       through2: 2.0.5
       traverse: 0.6.8
 
-  glicko2@1.2.2: {}
+  glicko2@1.2.4: {}
 
   graceful-fs@4.2.10: {}
 
